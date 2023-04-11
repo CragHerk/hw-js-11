@@ -40,6 +40,7 @@ body {
   background-color: rgb(79, 79, 184);
   width: 100%;
   text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #search-button {
