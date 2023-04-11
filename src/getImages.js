@@ -2,7 +2,7 @@ import axios from 'axios';
 import notiflix from 'notiflix';
 
 const API_KEY = '35097594-2079bd5e4adb4155ba76a6246';
-const PER_PAGE = 40;
+const PER_PAGE = 30;
 
 const getImages = async (searchTerm, page) => {
   try {

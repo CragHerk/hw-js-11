@@ -24,11 +24,15 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
   border-radius: 5px;
+  transition: all 0.3s ease-in-out;
 }
-#search-box:hover,
+
+#search-box:hover {
+  outline: none;
+  transform: scale(1.05);
+}
 #search-box:focus {
   outline: none;
-  border: 2px solid rgb(79, 79, 184);
 }
 
 .search-form {
@@ -57,18 +61,26 @@ body {
   border: none;
   outline: none;
   background-color: #fafafa;
+  position: fixed;
+  top: 27px;
+  transition: all 0.3s ease-in-out;
 }
 
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 48px;
+
   margin-left: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
 }
 @media only screen and (max-width: 768px) {
-  .container {
-    padding-top: 28px;
+  .gallery {
+    padding-top: 110px;
   }
 }
 .gallery {
@@ -78,6 +90,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 100px;
 }
 
 .gallery-item {
