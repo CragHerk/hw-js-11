@@ -126,3 +126,21 @@ body {
 .load-more {
   display: none;
 }
+.load-more.visible {
+  display: block;
+}
+.styled-load-more {
+  margin: 20px auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(79, 79, 184);
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.styled-load-more:hover {
+  background-color: #1c214c;
+}

@@ -2,7 +2,7 @@ import getImages from './getImages';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 const perPage = 40;
-
+let gallery = document.querySelector('.gallery');
 const createGallery = images => {
   const gallery = document.querySelector('.gallery');
 
@@ -63,12 +63,11 @@ const createGallery = images => {
     gallery.appendChild(galleryItem);
   });
 
-  const lightbox = new SimpleLightbox('.gallery a', {
-    /* opcje */
-  });
+  const lightbox = new SimpleLightbox('.gallery a', {});
   lightbox.on('error.simplelightbox', function (e) {
     console.log(e);
   });
+  document.querySelector('.load-more').style.display = 'block';
 };
 
 const searchForm = document.querySelector('.search-form');
@@ -80,6 +79,8 @@ searchForm.addEventListener('submit', async event => {
   const searchTerm = searchInput.value.trim();
 
   if (searchTerm) {
+    clearGallery();
+
     const images = await getImages(searchTerm);
 
     if (images.length === 0) {
@@ -90,3 +91,33 @@ searchForm.addEventListener('submit', async event => {
     createGallery(images);
   }
 });
+
+function clearGallery() {
+  // Remove all children from the gallery element
+  while (gallery.firstChild) {
+    gallery.removeChild(gallery.firstChild);
+  }
+}
+
+// loadmore button
+const loadMoreButton = document.querySelector('.load-more');
+let currentPage = 1;
+
+loadMoreButton.addEventListener('click', async () => {
+  currentPage++;
+  const searchTerm = document.querySelector('.search-input').value.trim();
+  const images = await getImages(searchTerm, currentPage, perPage);
+
+  if (images.length === 0) {
+    loadMoreButton.classList.add('hidden');
+    const endMessage = document.createElement('div');
+    endMessage.innerText =
+      "We're sorry, but you've reached the end of search results.";
+    document.querySelector('.gallery').appendChild(endMessage);
+  } else {
+    createGallery(images);
+    loadMoreButton.classList.remove('hidden');
+  }
+});
+
+//
