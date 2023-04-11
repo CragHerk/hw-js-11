@@ -65,7 +65,7 @@ body {
 }
 @media only screen and (max-width: 768px) {
   .container {
-    padding-top: 58px;
+    padding-top: 28px;
   }
 }
 .gallery {
