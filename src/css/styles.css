@@ -18,8 +18,8 @@ body {
   font: inherit;
   padding: 8px 32px 8px 8px;
   width: 50%;
-  margin: 15px auto 16px 25%;
-  margin-left: 35%;
+  margin-top: 15px;
+  margin-bottom: 15px;
   font-size: large;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
@@ -39,6 +39,7 @@ body {
   width: 400px;
   background-color: rgb(79, 79, 184);
   width: 100%;
+  text-align: center;
 }
 
 #search-button {
