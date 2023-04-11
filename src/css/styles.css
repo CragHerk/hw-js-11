@@ -93,6 +93,7 @@ body {
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
+  border-radius: 5px;
 }
 .gallery-img:hover {
   transform: scale(1.1);
@@ -124,6 +125,7 @@ body {
   padding: 10px;
   box-sizing: border-box;
   color: #212121;
+  border-radius: 5px;
 }
 .img-info > span {
   font-size: 14px;
