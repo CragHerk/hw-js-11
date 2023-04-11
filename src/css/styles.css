@@ -80,7 +80,7 @@ body {
 }
 @media only screen and (max-width: 768px) {
   .gallery {
-    padding-top: 110px;
+    padding-top: 90px;
   }
   .search-form {
     position: fixed;
