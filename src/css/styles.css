@@ -79,9 +79,6 @@ body {
   z-index: 99;
 }
 @media only screen and (max-width: 768px) {
-  .gallery {
-    padding-top: 90px;
-  }
   .search-form {
     position: fixed;
     top: 0;
