@@ -82,6 +82,22 @@ body {
   .gallery {
     padding-top: 110px;
   }
+  .search-form {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background-color: rgb(79, 79, 184);
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  #search-box {
+    width: 80%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 }
 .gallery {
   display: grid;
